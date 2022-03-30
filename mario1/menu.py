@@ -12,18 +12,16 @@ sm_pos = (100,100)
 dh_pos = (500,200)
 
 class menuPage:
-    # IMPLEMENT AS BUTTON FOR POSITION?
-    super_mario_imgs = pg.image.load(f'images/orange_supermario.png')
-    duck_hunt_imgs = pg.image.load(f'images/duck_hunt.png')
-
-    supermario_title = super_mario_imgs.get_rect()
-    duck_hunt_title = duck_hunt_imgs.get_rect()
 
     def __init__(self, game):
         #self.sound = game.sound
         self.screen = game.screen
         self.menu_page_finished = False
         #self.highschore = game.stats.get_highscore()
+
+        # super_mario_imgs = pg.image.load(f'images/orange_supermario.png')
+        # self.screen.blit(super_mario_imgs, (30, 30))
+        # pg.display.update()
 
         headingFont = pg.font.SysFont(None, 192)
         subheadingFont = pg.font.SysFont(None, 122)
@@ -45,18 +43,20 @@ class menuPage:
         return self.high_scores.rect.collidepoint(mouse_x, mouse_y)
 
     def draw(self):
-        self.duck_hunt_imgss = pg.image.load(f'images/duck_hunt.png')
-        self.super_mario_imgss = pg.image.load(f'images/orange_supermario.png')
-        self.dk_rect = self.duck_hunt_imgss.get_rect()
-        self.sm_rect = self.super_mario_imgss.get_rect()
-
-
         self.screen.fill(BLACK)
-        self.screen.blit(self.duck_hunt_imgss, self.dk_rect)
-        self.screen.blit(self.super_mario_imgss, self.sm_rect)
-
         self.play_button.draw()
         self.high_scores.draw()
+
+        scaling = (600,200)
+
+        super_mario_imgs = pg.image.load(f'images/orange_supermario.png')
+        super_mario_imgs = pg.transform.scale(super_mario_imgs, scaling)
+        self.screen.blit(super_mario_imgs, (350, 50))
+
+        duck_hunt_imgs = pg.image.load(f'images/duck_hunt.png')
+        duck_hunt_imgs = pg.transform.scale(duck_hunt_imgs, scaling)
+        self.screen.blit(duck_hunt_imgs, (330,330))
+
         pg.display.flip()
 
     def show(self):

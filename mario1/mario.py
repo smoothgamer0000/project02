@@ -11,14 +11,14 @@ class Mario(Sprite):
         self.game = game
         self.screen = game.screen
         self.settings = game.settings
-        self.sound = game.sound
+        #self.sound = game.sound
         self.ball = None
         self.stats = game.stats
         #self.mario_image = pg.image.load('images/mario.bmp')
 
-        self.rect = self.image.get_rect()
+        #self.rect = self.image.get_rect()
         self.screen_rect = self.screen.get_rect()
-        self.center_bottom()
+        #self.center_bottom()
         self.v = Vector()
         self.firing = False
         self.frames = 0

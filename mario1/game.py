@@ -10,6 +10,7 @@ from ball import Ball, enemyBall
 from mario import Mario
 from enemy import Enemy
 from settings import Settings
+from stats import Stats
 #from sound import Sound
 
 class Game:
@@ -19,6 +20,12 @@ class Game:
         self.settings = Settings()
         self.screen = pg.display.set_mode((self.settings.screen_width,
                                            self.settings.screen_height))
+
+        self.bg_color = self.settings.bg_color
+        self.stats = Stats(game=self)
+        self.sb = Scoreboard(game=self)
+        self.mario = Mario(game=self)
+
 
     def update(self): pass
 

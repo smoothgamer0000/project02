@@ -4,11 +4,11 @@ class Stats:
     def __init__(self,game):
         self.game = game
         self.settings = game.settings
-        self.reset_stats()
-        self.last_lives_left = self.lives_left
+        #self.reset_stats()
+        #self.last_lives_left = self.lives_left
         self.score = 0
         self.level = 0
-        self.highscore = self.load_high_score()
+        #self.highscore = self.load_high_score()
 
         def __del__(self): self.save_high_score()
 

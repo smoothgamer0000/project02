@@ -52,22 +52,22 @@ class Scoreboard():
         self.bg_color = game.bg_color
         font = pg.font.SysFont(None, 48)
 
-        self.score = SbElement(screen=screen, bg_color=game.bg_color,
-                               ul=(sr.right - 40, 20), font=font,
-                               get_score=self.stats.get_score)
-        self.coins = SbElement(screen=screen, bg_color=game.bg_color,
-                               ul=(sr.right - 40, 20), font=font,
-                               get_score=self.stats.get_score)
-        self.highscore = SbElement(screen=screen, bg_color=game.bg_color,
-                                   ul=(sr.centerx, 20), font=font,
-                                   get_score=self.stats.get_highscore)
+        # self.score = SbElement(screen=screen, bg_color=game.bg_color,
+        #                        ul=(sr.right - 40, 20), font=font,
+        #                        get_score=self.stats.get_score)
+        # self.coins = SbElement(screen=screen, bg_color=game.bg_color,
+        #                        ul=(sr.right - 40, 20), font=font,
+        #                        get_score=self.stats.get_score)
+        # self.highscore = SbElement(screen=screen, bg_color=game.bg_color,
+        #                            ul=(sr.centerx, 20), font=font,
+        #                            get_score=self.stats.get_highscore)
         # self.ships = Group()
         self.update()
 
-    def update(self):
-        self.score.update()
-        self.coins.update()
-        self.highscore.update()
+    def update(self): pass
+        # self.score.update()
+        # self.coins.update()
+        # self.highscore.update()
 
     def draw(self):
         self.score.draw()
