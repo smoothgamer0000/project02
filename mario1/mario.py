@@ -1,6 +1,7 @@
 import pygame as pg
 from pygame.sprite import Sprite
 from pygame import *
+from sound import Sound
 
 
 class Mario(Sprite):
@@ -20,7 +21,7 @@ class Mario(Sprite):
         self.platforms = platforms
         self.width = 17
         self.height = 16
-        self.jump = pg.mixer.Sound('sound/small_jump.wav')
+        self.sound = Sound()
 
     def change(self, newMarioType):
         if newMarioType == 'big':
@@ -71,7 +72,7 @@ class Mario(Sprite):
         right = pressed[K_RIGHT]
         if up:
             if self.onGround and self.velocity.y <= self.jump_max:
-                self.jump.play()
+                self.sound.play_super_jump()  #changed to uses the Sound class
                 self.velocity.y -= 10
         if left and abs(self.velocity.x) <= self.max_speed:
             self.velocity.x -= 0.3

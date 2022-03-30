@@ -11,11 +11,12 @@ from mario import Mario
 from enemy import Enemy
 from settings import Settings
 from stats import Stats
-from mario1.goomba import Goomba
-from mario1.timer import Timer
+from goomba import Goomba
+from timer import Timer
 from mario import Mario
-from mario1.camera import Camera
-from mario1.object_functions import from_sprite_sheet, strip_objects
+from camera import Camera
+from object_functions import from_sprite_sheet, strip_objects
+from sound import Sound
 import sys
 
 #from sound import Sound
@@ -54,8 +55,9 @@ class Game:
         self.marioWorld = pg.image.load("images/emptyWorld.png")
         self.marioWorld = pg.transform.scale2x(self.marioWorld)
         self.font = pg.font.Font(None, 32)
-        pg.mixer.music.load('sound/super_mario_bros.wav')
-        pg.mixer.music.play(-1)
+        self.sound = Sound()
+        # pg.mixer.music.load('sound/super_mario_bros.wav')
+        # pg.mixer.music.play(-1)
         self.clock = pg.time.Clock()
 
 
@@ -81,6 +83,7 @@ class Game:
 
     def play(self):
         self.finished = False
+        self.sound.play_bg()    #changed to uses the Sound class and plays in the game
         while not self.finished:
             self.check_events()
             self.update()

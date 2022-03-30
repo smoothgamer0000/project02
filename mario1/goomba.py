@@ -2,6 +2,7 @@ import pygame as pg
 from pygame.sprite import Sprite
 from timer import Timer
 from enemy import Enemy
+from sound import Sound
 
 
 class Goomba(Sprite):
@@ -16,6 +17,7 @@ class Goomba(Sprite):
         self.isSquished = False
         self.killme = False
         self.velocity = -1
+        self.sound = Sound()
 
     def update(self):
         timer_image = self.goomba_timer.imagerect()
@@ -26,6 +28,7 @@ class Goomba(Sprite):
                 timer_image = self.goomba_timer.imagerect()
                 self.image = timer_image
             else:
+                self.sound.play_stomp() #currently only plays once the goomba dies
                 self.killme = True
         else:
             if self.goomba_timer.index == 2:
