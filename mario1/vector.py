@@ -5,7 +5,7 @@ class Vector:
     def __repr__(self): return f'v({self.x},{self.y})'
     def __add__(self, o): return Vector(self.x + o.x, self.y + o.y)
     def __iadd__(self, o): self.x += o.x;  self.y += o.y;  return self
-    def __radd_(self, o): return self + o          # what about 3 * v
+    def __radd_(self, o): return self + o
     def __neg__(self): return Vector(-self.x, -self.y)
     def __sub__(self, o): return self + -o
     def __rsub__(self, o): return -(self - o)
@@ -17,3 +17,4 @@ class Vector:
     def norm(self): return self / self.magnitude()
     def __eq__(self, o): return self.x == o.x and self.y == o.y
     def __ne__(self, o): return not self == o
+

@@ -20,7 +20,7 @@ class Mario(Sprite):
         self.platforms = platforms
         self.width = 17
         self.height = 16
-        self.jump = pg.mixer.Sound('sound/small_jump.wav')
+        self.jump = pg.mixer.Sound('../sound/small_jump.wav')
 
     def change(self, newMarioType):
         if newMarioType == 'big':

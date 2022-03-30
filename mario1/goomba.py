@@ -1,7 +1,7 @@
 import pygame as pg
 from pygame.sprite import Sprite
 from timer import Timer
-from enemies import Enemies
+from enemy import Enemy
 
 
 class Goomba(Sprite):

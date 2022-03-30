@@ -19,7 +19,7 @@ class highscorePage:
     def __init__(self, game):
         self.screen = game.screen
         self.highscores_page_finished = False
-        self.highscore = game.stats.get_highscore()
+        #self.highscore = game.stats.get_highscore()
 
         headingFont = pg.font.SysFont(None, 192)
         subheadingFont = pg.font.SysFont(None, 122)
@@ -30,14 +30,14 @@ class highscorePage:
 
         self.play_button = Button(self.screen, "Play Game", ul=(centerx - 150, 650))
 
-        highscore_string = [ (f'HIGH SCORE = {self.highscore:,}', GREY, font)]
-        self.texts = [self.get_text(msg=s[0], color=s[1], font=s[2]) for s in highscore_string]
+        #highscore_string = [ (f'HIGH SCORE = {self.highscore:,}', GREY, font)]
+        #self.texts = [self.get_text(msg=s[0], color=s[1], font=s[2]) for s in highscore_string]
         self.posns = [150, 230]
-        self.posns.extend(enemy)
+        #self.posns.extend(enemy)
         self.posns.append(730)
 
-        n = len(self.texts)
-        self.rects = [self.get_text_rect(text=self.texts[i], centerx=centerx, centery=self.posns[i]) for i in range(n)]
+        #n = len(self.texts)
+        #self.rects = [self.get_text_rect(text=self.texts[i], centerx=centerx, centery=self.posns[i]) for i in range(n)]
 
     def get_text(self, font, msg, color):
         return font.render(msg, True, color, BLACK)
