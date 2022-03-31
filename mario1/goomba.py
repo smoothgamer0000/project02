@@ -10,8 +10,6 @@ class Goomba(Sprite):
         super(Goomba, self).__init__()
         self.platforms = platforms
         self.rect = pg.Rect(x, y, 32, 32)
-        for i in range(3):
-            goomba_images[i] = pg.transform.scale2x(goomba_images[i])
         self.goomba_timer = Timer(goomba_images, 300)
         self.screen = screen
         self.isSquished = False

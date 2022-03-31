@@ -43,8 +43,12 @@ class Game:
         self.camera = Camera(self.objects)
         self.goomba_images = from_sprite_sheet((0, 0), (16, 16), 3, 1,
                                                pg.image.load('images/goomba.png').convert_alpha())
+        for i in range(3):
+            self.goomba_images[i] = pg.transform.scale2x(self.goomba_images[i])
         self.enemies = pg.sprite.Group()
         self.enemies.add(Goomba(self.screen, self.goomba_images, self.objects, 400, 368))
+        self.enemies.add(Goomba(self.screen, self.goomba_images, self.objects, 600, 368))
+        self.enemies.add(Goomba(self.screen, self.goomba_images, self.objects, 700, 368))
         self.mario = Mario(self.screen, self.objects, self.camera)
         self.mario_small_timer = Timer(from_sprite_sheet((0, 0), (17, 16), 6, 1,
                                                          pg.image.load(
