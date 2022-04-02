@@ -30,8 +30,8 @@ class menuPage:
        centerx = self.screen.get_rect().centerx
        centery = self.screen.get_rect().centery
 
-       self.play_button = Button(self.screen, "Play Game", ul=(centerx - 150, 650))
-       self.high_scores = Button(self.screen, "High Scores", ul=(centerx - 150, 700))
+       self.play_button = Button(self.screen, "Play Game", ul=(30, 70))
+       self.high_scores = Button(self.screen, "High Scores", ul=(30, 120))
 
        self.high_scores_page_change = False
 
@@ -47,15 +47,15 @@ class menuPage:
        self.play_button.draw()
        self.high_scores.draw()
 
-       scaling = (600,200)
+       scaling = (400,150)
 
        super_mario_imgs = pg.image.load(f'images/orange_supermario.png')
        super_mario_imgs = pg.transform.scale(super_mario_imgs, scaling)
-       self.screen.blit(super_mario_imgs, (350, 50))
+       self.screen.blit(super_mario_imgs, (350, 40))
 
        duck_hunt_imgs = pg.image.load(f'images/duck_hunt.png')
        duck_hunt_imgs = pg.transform.scale(duck_hunt_imgs, scaling)
-       self.screen.blit(duck_hunt_imgs, (330,330))
+       self.screen.blit(duck_hunt_imgs, (330,230))
 
        pg.display.flip()
 
