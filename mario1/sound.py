@@ -17,7 +17,7 @@ class Sound:
         self.pipe_down = pg.mixer.Sound('sound/pipe_powerdown.wav')
         self.power_down = pg.mixer.Sound('sound/pipe_powerdown.wav')
         self.power_up = pg.mixer.Sound('sound/powerup.wav')
-        self.power_up_appear = pg.mixer.Sound('sound/powerup_appear.wav')
+        self.power_up_appear = pg.mixer.Sound('sound/powerup_appears.wav')
         self.small_jump = pg.mixer.Sound('sound/small_jump.wav')
         self.stage_clear = pg.mixer.Sound('sound/stage_clear.wav')
         self.vine = pg.mixer.Sound('sound/vine.wav')
