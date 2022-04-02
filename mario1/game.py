@@ -82,7 +82,7 @@ class Game:
             if enemy.killme:
                 self.enemies.remove(enemy)
         enemy = pg.sprite.spritecollideany(self.mario, self.enemies)
-        if enemy is not None and int(self.mario.velocity.y) > 0:
+        if enemy is not None and int(self.mario.v.y) > 0:
             enemy.squish()
         self.clock.tick(60)
         pg.display.flip()
