@@ -103,7 +103,7 @@ class Game:
 
 
     def game_over(self):
-        #self.sound.play_game_over()
+        self.sound.play_game_over()
         print('\nGAME OVER!\n\n')
         exit()
 
