@@ -30,9 +30,9 @@ class Game:
         # self.screen = pg.display.set_mode((self.settings.screen_width,
         #                                    self.settings.screen_height))
 
-        #self.screen = pg.display.set_mode((1200, 450))
-        self.screen = pg.display.set_mode((self.settings.screen_width,
-                                           self.settings.screen_height))
+        self.screen = pg.display.set_mode((1200, 450))
+        #self.screen = pg.display.set_mode((self.settings.screen_width,
+        #                                   self.settings.screen_height))
 
         # self.bg_color = self.settings.bg_color
         # self.stats = Stats(game=self)
