@@ -28,7 +28,8 @@ class highscorePage:
         centerx = self.screen.get_rect().centerx
         centery = self.screen.get_rect().centery
 
-        self.play_button = Button(self.screen, "Play Game", ul=(centerx - 150, 650))
+        self.play_button = Button(self.screen, "Click to start", ul=(30, 70))
+        self.high_scores = Button(self.screen, "Top 5 highscores:", ul=(30, 120))
 
         #highscore_string = [ (f'HIGH SCORE = {self.highscore:,}', GREY, font)]
         #self.texts = [self.get_text(msg=s[0], color=s[1], font=s[2]) for s in highscore_string]
@@ -48,8 +49,6 @@ class highscorePage:
         rect.centery = centery
         return rect
 
-
-
     def mouse_on_play(self):
         mouse_x, mouse_y = pg.mouse.get_pos()
         return self.play_button.rect.collidepoint(mouse_x, mouse_y)
@@ -57,6 +56,7 @@ class highscorePage:
     def draw(self):
         self.screen.fill(BLACK)
         self.play_button.draw()
+        self.high_scores.draw()
         #self.draw_text()
         pg.display.flip()
 
