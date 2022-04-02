@@ -57,7 +57,7 @@ class highscorePage:
     def draw(self):
         self.screen.fill(BLACK)
         self.play_button.draw()
-        self.draw_text()
+        #self.draw_text()
         pg.display.flip()
 
     def show(self):
@@ -74,8 +74,8 @@ class highscorePage:
                 if self.mouse_on_play():
                     self.highscores_page_finished = True
 
-    def draw_text(self):
-        n = len(self.texts)
-        for i in range(n):
-            self.screen.blit(self.texts[i], self.rects[i])
+    # def draw_text(self):
+    #     n = len(self.texts)
+    #     for i in range(n):
+    #         self.screen.blit(self.texts[i], self.rects[i])
 
