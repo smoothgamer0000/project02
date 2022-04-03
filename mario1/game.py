@@ -113,12 +113,7 @@ class Game:
         print("restarting game")
         while self.sound.busy():    # wait for explosion sound to finish
             pass
-        self.lasers.empty()
-        self.alien_lasers.empty()
-        self.alien_fleet.empty()
-        self.alien_fleet.create_fleet()
-        self.ship.center_bottom()
-        self.ship.reset_timer()
+        self.ball.empty()
         self.update()
         self.draw()
         sleep(0.5)
